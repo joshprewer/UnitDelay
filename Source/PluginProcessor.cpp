@@ -132,6 +132,7 @@ void UnitDelayAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffe
     {
         float* channelData = buffer.getWritePointer (channel);
 
+        //test commit
         // ..do something to the data...
     }
 }
