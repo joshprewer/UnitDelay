@@ -116,7 +116,7 @@ void UnitDelayAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffe
 {
     const int totalNumInputChannels  = getTotalNumInputChannels();
     const int totalNumOutputChannels = getTotalNumOutputChannels();
-
+    
     // In case we have more outputs than inputs, this code clears any output
     // channels that didn't contain input data, (because these aren't
     // guaranteed to be empty - they may contain garbage).
@@ -131,6 +131,15 @@ void UnitDelayAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffe
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
         float* channelData = buffer.getWritePointer (channel);
+        
+        for (int sample = 0; sample < buffer.getNumSamples(); ++sample)
+        {
+            float xn = channelData[sample];
+            float xn_1 = z1[channel];
+            float yn = xn + xn_1;
+            z1[channel] = xn;
+            channelData[sample] = yn;
+        }
 
         //test commit
         // ..do something to the data...
