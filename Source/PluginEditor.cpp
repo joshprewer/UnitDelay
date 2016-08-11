@@ -21,11 +21,11 @@ UnitDelayAudioProcessorEditor::UnitDelayAudioProcessorEditor (UnitDelayAudioProc
     setSize (400, 300);
     
     filterSlider.setSliderStyle(Slider::LinearHorizontal);
-    filterSlider.setRange(0, 0.49, 0.01);
+    filterSlider.setRange(0, 2, 0.01);
     filterSlider.setTextBoxStyle(Slider::NoTextBox, false, 90, 0);
     filterSlider.setPopupDisplayEnabled(true, this);
     filterSlider.setTextValueSuffix("filter");
-    filterSlider.setValue(0.25);
+    filterSlider.setValue(1);
     
     addAndMakeVisible(&filterSlider);
     

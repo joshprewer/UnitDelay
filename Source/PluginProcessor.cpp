@@ -137,10 +137,13 @@ void UnitDelayAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffe
         
         for (int sample = 0; sample < buffer.getNumSamples(); ++sample)
         {
+            double noise = rand() %4000 - 2000;
+            float whiteNoise = noise / 4000;
+            channelData[sample] = whiteNoise;
             float xn = channelData[sample];
             float xn_1 = z1[channel];
             float yn_1 = y1[channel];
-            float yn = (a0*xn) + (a1*xn_1);
+            float yn = yn_1 + (a0 * (xn_1 - yn_1));
             z1[channel] = xn;
             y1[channel] = yn;
             channelData[sample] = yn;
