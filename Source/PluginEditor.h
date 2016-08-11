@@ -18,7 +18,7 @@
 //==============================================================================
 /**
 */
-class UnitDelayAudioProcessorEditor  : public AudioProcessorEditor
+class UnitDelayAudioProcessorEditor  : public AudioProcessorEditor, private Slider::Listener
 {
 public:
     UnitDelayAudioProcessorEditor (UnitDelayAudioProcessor&);
@@ -27,10 +27,13 @@ public:
     //==============================================================================
     void paint (Graphics&) override;
     void resized() override;
+    
 
 private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
+    
+    void sliderValueChanged(Slider* slider) override;
     
     Slider filterSlider;
     Label filterLabel;

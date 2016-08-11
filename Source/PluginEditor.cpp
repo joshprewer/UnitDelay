@@ -21,13 +21,15 @@ UnitDelayAudioProcessorEditor::UnitDelayAudioProcessorEditor (UnitDelayAudioProc
     setSize (400, 300);
     
     filterSlider.setSliderStyle(Slider::LinearHorizontal);
-    filterSlider.setRange(0, 1000, 1);
+    filterSlider.setRange(0, 0.49, 0.01);
     filterSlider.setTextBoxStyle(Slider::NoTextBox, false, 90, 0);
     filterSlider.setPopupDisplayEnabled(true, this);
     filterSlider.setTextValueSuffix("filter");
-    filterSlider.setValue(100);
+    filterSlider.setValue(0.25);
     
     addAndMakeVisible(&filterSlider);
+    
+    filterSlider.addListener(this);
 }
 
 UnitDelayAudioProcessorEditor::~UnitDelayAudioProcessorEditor()
@@ -42,6 +44,11 @@ void UnitDelayAudioProcessorEditor::paint (Graphics& g)
     g.setColour (Colours::black);
     g.setFont (15.0f);
     g.drawFittedText ("Hello World, This is a test!", getLocalBounds(), Justification::centred, 1);
+}
+
+void UnitDelayAudioProcessorEditor::sliderValueChanged(Slider* slider)
+{
+    processor.sliderVal = filterSlider.getValue();
 }
 
 void UnitDelayAudioProcessorEditor::resized()

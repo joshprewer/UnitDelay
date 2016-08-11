@@ -131,13 +131,18 @@ void UnitDelayAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffe
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
         float* channelData = buffer.getWritePointer (channel);
+        float a0 = sliderVal;
+        float a1 = sliderVal - 1;
+        
         
         for (int sample = 0; sample < buffer.getNumSamples(); ++sample)
         {
             float xn = channelData[sample];
             float xn_1 = z1[channel];
-            float yn = xn + xn_1;
+            float yn_1 = y1[channel];
+            float yn = (a0*xn) + (a1*xn_1);
             z1[channel] = xn;
+            y1[channel] = yn;
             channelData[sample] = yn;
         }
 

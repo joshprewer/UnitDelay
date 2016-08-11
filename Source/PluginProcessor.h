@@ -17,13 +17,15 @@
 //==============================================================================
 /**
 */
-class UnitDelayAudioProcessor  : public AudioProcessor
+class UnitDelayAudioProcessor  : public AudioProcessor 
 {
 public:
     //==============================================================================
     UnitDelayAudioProcessor();
     ~UnitDelayAudioProcessor();
 
+    float sliderVal;
+    
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
     void releaseResources() override;
@@ -59,6 +61,7 @@ public:
 private:
     
     float z1[2];
+    float y1[2];
         
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (UnitDelayAudioProcessor)
