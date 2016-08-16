@@ -11,8 +11,6 @@
               pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="4.2.3">
   <MAINGROUP id="Jd8r2X" name="UnitDelay">
     <GROUP id="{6CEC7C37-B89C-D81D-1856-6806B7A1D297}" name="Source">
-      <FILE id="SBIEBK" name="LPF.cpp" compile="1" resource="0" file="Source/LPF.cpp"/>
-      <FILE id="A7fcJQ" name="LPF.h" compile="0" resource="0" file="Source/LPF.h"/>
       <FILE id="E49V4m" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="aDZADR" name="PluginProcessor.h" compile="0" resource="0"
