@@ -8,7 +8,7 @@
               pluginIsSynth="0" pluginWantsMidiIn="0" pluginProducesMidiOut="0"
               pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0" pluginAUExportPrefix="UnitDelayAU"
               pluginRTASCategory="" aaxIdentifier="com.yourcompany.UnitDelay"
-              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="4.2.3">
+              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="4.3.0">
   <MAINGROUP id="Jd8r2X" name="UnitDelay">
     <GROUP id="{6CEC7C37-B89C-D81D-1856-6806B7A1D297}" name="Source">
       <FILE id="E49V4m" name="PluginProcessor.cpp" compile="1" resource="0"

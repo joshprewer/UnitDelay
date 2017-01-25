@@ -31,7 +31,7 @@ public:
     void releaseResources() override;
 
    #ifndef JucePlugin_PreferredChannelConfigurations
-    bool setPreferredBusArrangement (bool isInput, int bus, const AudioChannelSet& preferredSet) override;
+    bool setPreferredBusArrangement (bool isInput, int bus, const AudioChannelSet& preferredSet) ;
    #endif
 
     void processBlock (AudioSampleBuffer&, MidiBuffer&) override;
